@@ -14,6 +14,7 @@ echo enable nat with iptables
 sudo iptables -t nat -A POSTROUTING -o $internet0 -j MASQUERADE
 sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 sudo iptables -A FORWARD -i $net0 -o $internet0 -j ACCEPT
+echo "ip route add  default via 192.168.168.2" in nextvod
 echo Done
 # vim:et sw=2 ts=2 ai nocp sta
 
